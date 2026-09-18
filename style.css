@@ -79,6 +79,57 @@ body {
 }
 
 
+/* Language Switch */
+
+.language-switch {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    width: 68px;
+    height: 32px;
+    padding: 3px;
+
+    background-color: var(--lightblue);
+    border-radius: 999px;
+}
+
+.language-switch__slider {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+
+    width: 31px;
+    height: 26px;
+
+    background-color: var(--white);
+    border-radius: 999px;
+
+    transition: transform 0.25s ease;
+}
+
+.language-switch__option {
+    position: relative;
+    z-index: 1;
+    width: 31px;
+    height: 26px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: var(--blue);
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.65rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.language-switch__option.active {
+    /* indica o idioma atual, não remover */
+}
+
+
+
+
 /* ==========================================================================
    HERO
    ========================================================================== */
@@ -242,6 +293,9 @@ body {
 
 .what-i-do__subtitle {
     color: #FFFFFF;
+    font-size: 13px;
+    margin-top: 15px;
+    text-align: left;
 }
 
 .what-i-do__cards {
@@ -253,16 +307,22 @@ body {
 .what-i-do__item {
     width: 260px;
     flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 .what-i-do__card {
     width: 260px;
     height: 230px;
-    background-color: var(--white);
+
+    background-color: var(--lightblue);
     border-radius: 3px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+    box-sizing: border-box;
 
     transition:
         transform 0.3s ease,
@@ -274,27 +334,54 @@ body {
     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.18);
 }
 
+.what-i-do__icon {
+    width: 38px;
+    height: 38px;
+    margin-bottom: 18px;
+}
+
+.what-i-do__icon svg {
+    width: 100%;
+    height: 100%;
+
+    fill: none;
+    stroke: #9d66d1;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
 .what-i-do__item-title {
     font-family: var(--font-poppins);
     font-weight: 700;
     font-size: 15px;
     text-transform: uppercase;
-    color: #FFFFFF;
-    margin-top: 20px;
+
+    color: var(--blue);
+    text-align: center;
+
+    margin: 0;
 
     transition: color 0.25s ease;
 }
 
 .what-i-do__item:hover .what-i-do__item-title {
-    color: #d4b3f3;
+    color: #8c64b1;
 }
 
 .what-i-do__item-subtitle {
     font-family: var(--font-poppins);
     font-weight: 400;
     font-size: 12px;
-    color: #FFFFFF;
-    margin-top: 8px;
+
+    color: rgba(14, 44, 75, 0.7);
+
+    margin: 12px 0 0;
+
+    text-align: center;
+    line-height: 1.5;
+
+    max-width: 210px;
 }
 
 
@@ -313,6 +400,8 @@ body {
 
 .projects__subtitle {
     color: var(--black);
+    font-size: 13px;
+    margin-top: 15px;
 }
 
 .projects__gallery {
@@ -400,6 +489,7 @@ body {
     color: var(--black);
     margin-top: 40px;
     margin-bottom: 40px;
+
 }
 
 .skills__grid {
