@@ -1111,12 +1111,10 @@ MENU SANDUICHE
         display: block;
         position: relative;
         z-index: 102;
-
         padding: 0;
         border: none;
         background: transparent;
-
-        color: var(--blue);
+        color: var(--white);
         font-family: var(--font-ibm);
         font-size: 12px;
         font-weight: 500;
