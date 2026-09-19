@@ -35,6 +35,7 @@ html {
 body {
     background-color: var(--white);
     color: var(--black);
+    overflow-x: hidden;
 }
 
 
@@ -48,13 +49,12 @@ body {
     justify-content: center;
     padding: 20px 0;
     height: 60px;
-
     opacity: 0;
     animation: fadeIn 0.6s ease-out forwards;
 }
 
 .navbar__nav {
-    width: 674px;
+    width: min(90%, 674px);
     height: 20px;
     display: flex;
     align-items: center;
@@ -67,7 +67,6 @@ body {
     font-size: 13px;
     color: var(--black);
     text-decoration: none;
-
     transition:
         color 0.25s ease,
         transform 0.25s ease;
@@ -85,11 +84,9 @@ body {
     position: relative;
     display: flex;
     align-items: center;
-
     width: 68px;
     height: 32px;
     padding: 3px;
-
     background-color: var(--lightblue);
     border-radius: 999px;
 }
@@ -98,13 +95,10 @@ body {
     position: absolute;
     top: 3px;
     left: 3px;
-
     width: 31px;
     height: 26px;
-
     background-color: var(--white);
     border-radius: 999px;
-
     transition: transform 0.25s ease;
 }
 
@@ -126,8 +120,6 @@ body {
 .language-switch__option.active {
     /* indica o idioma atual, não remover */
 }
-
-
 
 
 /* ==========================================================================
@@ -153,7 +145,6 @@ body {
     font-weight: 400;
     font-size: 17px;
     color: var(--black);
-
     opacity: 0;
     transform: translateY(20px);
     animation: heroFadeUp 0.7s ease-out 0.1s forwards;
@@ -162,10 +153,9 @@ body {
 .hero__line--title {
     font-family: var(--font-ibm);
     font-weight: 700;
-    font-size: 70px;
+    font-size: clamp(42px, 5vw, 70px);
     color: var(--blue);
     line-height: 1.1;
-
     opacity: 0;
     transform: translateY(20px);
     animation: heroFadeUp 0.7s ease-out 0.25s forwards;
@@ -180,7 +170,6 @@ body {
     display: flex;
     gap: 50px;
     margin-top: 40px;
-
     opacity: 0;
     transform: translateY(20px);
     animation: heroFadeUp 0.7s ease-out 0.4s forwards;
@@ -198,7 +187,6 @@ body {
     text-decoration: none;
     border: 2px solid transparent;
     cursor: pointer;
-
     transition:
         transform 0.25s ease,
         box-shadow 0.25s ease,
@@ -254,7 +242,7 @@ body {
    ========================================================================== */
 
 .container {
-    max-width: 55%;
+    width: min(90%, 1100px);
     margin: 0 auto;
 }
 
@@ -266,7 +254,6 @@ body {
 .reveal {
     opacity: 0;
     transform: translateY(35px);
-
     transition:
         opacity 0.7s ease,
         transform 0.7s ease;
@@ -300,17 +287,16 @@ body {
 
 .what-i-do__cards {
     display: flex;
-    gap: 85px;
+    gap: 40px;
     margin-top: 86px;
 }
 
 .what-i-do__item {
-    width: 260px;
     flex: 1;
 }
 
 .what-i-do__card {
-    width: 260px;
+    width: 100%;
     height: 230px;
 
     background-color: var(--lightblue);
@@ -428,7 +414,6 @@ body {
 .projects__card {
     background-color: #EBEBEB;
     border-radius: 3px;
-
     transition:
         transform 0.3s ease,
         box-shadow 0.3s ease;
@@ -437,7 +422,6 @@ body {
 .projects__card:hover {
     transform: translateY(-6px);
     box-shadow: 0 10px 25px rgba(15, 15, 15, 0.12);
-
 }
 
 .projects__card--1,
@@ -489,7 +473,6 @@ body {
     color: var(--black);
     margin-top: 40px;
     margin-bottom: 40px;
-
 }
 
 .skills__grid {
@@ -510,11 +493,9 @@ body {
     position: relative;
     width: 100%;
     height: 100%;
-
     transition:
         transform 0.5s ease,
         box-shadow 0.5s ease;
-
     transform-style: preserve-3d;
 }
 
@@ -531,11 +512,9 @@ body {
     backface-visibility: hidden;
     border-radius: 3px;
     background-color: var(--lightblue);
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     font-family: var(--font-ibm);
     font-size: 12px;
     color: var(--black);
@@ -617,7 +596,6 @@ body {
     object-position: top;
     border-radius: 3px;
     box-shadow: 0 8px 20px rgba(15, 15, 15, 0.15);
-
 }
 
 .about__socials {
@@ -632,11 +610,9 @@ body {
     border-radius: 50%;
     background-color: var(--blue);
     color: var(--white);
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     transition:
         transform 0.25s ease,
         box-shadow 0.25s ease;
@@ -644,7 +620,6 @@ body {
 
 .about__social-icon svg {
     fill: currentColor;
-
     transition:
         fill 0.25s ease,
         transform 0.25s ease;
@@ -688,10 +663,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     font-family: var(--font-poppins);
     font-size: 14px;
-
     list-style: none;
     cursor: pointer;
 }
@@ -711,9 +684,7 @@ body {
     font-size: 20px;
     line-height: 1;
     color: #CECECE;
-
     display: inline-block;
-
     transition:
         transform 0.35s ease-in-out,
         color 0.25s ease;
@@ -726,7 +697,6 @@ body {
 
 .quickanswers__content p {
     margin-top: 12px;
-
     font-family: var(--font-poppins);
     font-size: 12px;
     font-weight: 400;
@@ -748,6 +718,7 @@ body {
 }
 
 .contact span {
+    display: inline-block;
     margin-top: 12px;
     font-family: var(--font-poppins);
     font-size: 12px;
@@ -769,7 +740,6 @@ body {
     color: var(--white);
     text-align: center;
     padding: 30px 20px;
-
     opacity: 0;
     animation: fadeIn 0.7s ease-out 0.2s forwards;
 }
@@ -783,17 +753,14 @@ body {
 .footer__link {
     font-weight: 600;
     text-decoration: none;
-
     background: linear-gradient(90deg,
             #C084FC,
             #F472B6,
             #FB7185,
             #FB923C);
-
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
-
     transition: opacity 0.3s ease;
 }
 
@@ -807,7 +774,6 @@ body {
    ========================================================================== */
 
 @keyframes fadeIn {
-
     from {
         opacity: 0;
     }
@@ -818,7 +784,6 @@ body {
 }
 
 @keyframes heroFadeUp {
-
     from {
         opacity: 0;
         transform: translateY(20px);
