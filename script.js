@@ -54,16 +54,26 @@ if (currentLanguage === "pt") {
 
 const menuToggle = document.querySelector('.menu-toggle');
 const navbarMenu = document.querySelector('.navbar__menu');
+const navbar = document.querySelector('.navbar');
 
 menuToggle.addEventListener('click', () => {
     const isOpen = navbarMenu.classList.toggle('is-open');
 
+    navbar.classList.toggle('menu-open', isOpen);
+
     menuToggle.setAttribute('aria-expanded', isOpen);
+    menuToggle.setAttribute(
+        'aria-label',
+        isOpen ? 'Close menu' : 'Open menu'
+    );
 });
 
 document.querySelectorAll('.navbar__link').forEach(link => {
     link.addEventListener('click', () => {
         navbarMenu.classList.remove('is-open');
+        navbar.classList.remove('menu-open');
+
         menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Open menu');
     });
 });

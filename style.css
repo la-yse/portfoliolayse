@@ -1031,14 +1031,16 @@ MENU SANDUICHE
         width: min(90%, 500px);
     }
 
-    /* NAVBAR */
+    /* ==========================================================================
+   NAVBAR
+   ========================================================================== */
 
     .navbar {
         height: 60px;
         padding: 14px 0;
         position: relative;
         z-index: 100;
-        background-color: var(--blue);
+        background-color: var(--white);
         transition: background-color 0.25s ease;
     }
 
@@ -1060,11 +1062,14 @@ MENU SANDUICHE
         left: 0;
         width: 100%;
         padding: 25px 20px 30px;
+
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 20px;
+
         background-color: var(--white);
+
         opacity: 0;
         visibility: hidden;
         transform: translateY(-12px);
@@ -1107,19 +1112,26 @@ MENU SANDUICHE
         margin-top: 5px;
     }
 
+
+    /* ==========================================================================
+   HAMBURGER
+   ========================================================================== */
+
     .menu-toggle {
         display: block;
         position: relative;
         z-index: 102;
+
+        width: 32px;
+        height: 32px;
         padding: 0;
+
         border: none;
         background: transparent;
-        color: var(--white);
-        font-family: var(--font-ibm);
-        font-size: 12px;
-        font-weight: 500;
 
+        color: var(--blue);
         cursor: pointer;
+
         transition: color 0.25s ease;
     }
 
@@ -1135,12 +1147,75 @@ MENU SANDUICHE
         color: var(--lilac);
     }
 
-    /* HERO */
+    .menu-toggle__icon {
+        position: relative;
+
+        display: block;
+
+        width: 20px;
+        height: 16px;
+
+        margin: 0 auto;
+    }
+
+    .menu-toggle__icon span {
+        position: absolute;
+        left: 0;
+
+        display: block;
+
+        width: 20px;
+        height: 1.5px;
+
+        background-color: currentColor;
+        border-radius: 2px;
+
+        transition:
+            top 0.25s ease,
+            transform 0.25s ease,
+            opacity 0.2s ease;
+    }
+
+    .menu-toggle__icon span:nth-child(1) {
+        top: 0;
+    }
+
+    .menu-toggle__icon span:nth-child(2) {
+        top: 7.25px;
+    }
+
+    .menu-toggle__icon span:nth-child(3) {
+        top: 14.5px;
+    }
+
+
+    /* ==========================================================================
+   HAMBURGER → X
+   ========================================================================== */
+
+    .navbar.menu-open .menu-toggle__icon span:nth-child(1) {
+        top: 7.25px;
+        transform: rotate(45deg);
+    }
+
+    .navbar.menu-open .menu-toggle__icon span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .navbar.menu-open .menu-toggle__icon span:nth-child(3) {
+        top: 7.25px;
+        transform: rotate(-45deg);
+    }
+
+    /* ==========================================================================
+   HERO
+   ========================================================================== */
 
     .hero {
-        min-height: calc(100vh - 70px);
+        width: 100%;
         height: auto;
-        padding: 80px 20px;
+        min-height: 58vh;
+        padding: 45px 20px 55px;
     }
 
     .hero__line {
@@ -1161,16 +1236,7 @@ MENU SANDUICHE
         flex-direction: column;
         align-items: center;
         gap: 15px;
-        margin-top: 35px;
-    }
-
-    /*  HERO */
-
-    .hero {
-        width: 100%;
-        height: auto;
-        min-height: 65vh;
-        padding: 60px 20px 70px;
+        margin-top: 30px;
     }
 
     /* BUTTONS */
