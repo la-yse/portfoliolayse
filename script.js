@@ -49,3 +49,21 @@ const currentLanguage = document.querySelector(
 if (currentLanguage === "pt") {
     slider.style.transform = "translateX(31px)";
 }
+
+// Menu Sanduiche Responsivo
+
+const menuToggle = document.querySelector('.menu-toggle');
+const navbarMenu = document.querySelector('.navbar__menu');
+
+menuToggle.addEventListener('click', () => {
+    const isOpen = navbarMenu.classList.toggle('is-open');
+
+    menuToggle.setAttribute('aria-expanded', isOpen);
+});
+
+document.querySelectorAll('.navbar__link').forEach(link => {
+    link.addEventListener('click', () => {
+        navbarMenu.classList.remove('is-open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+    });
+});
